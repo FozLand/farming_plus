@@ -6,7 +6,7 @@ minetest.register_craftitem("farming_plus:strawberry_seed", {
 	description = S("Strawberry Seeds"),
 	inventory_image = "farming_strawberry_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
-		return farming.place_seed(itemstack, placer, pointed_thing, "farming_plus:strawberry_1")
+		return farming:place_seed(itemstack, placer, pointed_thing, "farming_plus:strawberry_1")
 	end
 })
 
@@ -80,8 +80,8 @@ minetest.register_node("farming_plus:strawberry", {
 
 minetest.register_craftitem("farming_plus:strawberry_item", {
 	description = S("Strawberry"),
-	inventory_image = "farming_strawberry.png",
+	inventory_image = 'farming_strawberry.png',
 	on_use = minetest.item_eat(2),
 })
 
-farming.add_plant("farming_plus:strawberry", {"farming_plus:strawberry_1", "farming_plus:strawberry_2", "farming_plus:strawberry_3"}, 50, 20)
+farming:add_plant("farming_plus:strawberry", {"farming_plus:strawberry_1", "farming_plus:strawberry_2", "farming_plus:strawberry_3"}, 50, 20)

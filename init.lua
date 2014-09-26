@@ -8,7 +8,7 @@ else
 	farming.S = function ( s ) return s end
 end
 
-function farming.add_plant(full_grown, names, interval, chance)
+function farming:add_plant(full_grown, names, interval, chance)
 	minetest.register_abm({
 		nodenames = names,
 		interval = interval,
@@ -51,7 +51,7 @@ function farming.add_plant(full_grown, names, interval, chance)
 	})
 end
 
-function farming.generate_tree(pos, trunk, leaves, underground, replacements)
+function farming:generate_tree(pos, trunk, leaves, underground, replacements)
 	pos.y = pos.y-1
 	local nodename = minetest.get_node(pos).name
 	local ret = true
@@ -68,7 +68,7 @@ function farming.generate_tree(pos, trunk, leaves, underground, replacements)
 	if ret or minetest.get_node_light(pos) < 8 then
 		return
 	end
-	
+
 	node = {name = ""}
 	for dy=1,4 do
 		pos.y = pos.y+dy
@@ -83,11 +83,11 @@ function farming.generate_tree(pos, trunk, leaves, underground, replacements)
 		minetest.set_node(pos, node)
 		pos.y = pos.y-dy
 	end
-	
+
 	if not replacements then
 		replacements = {}
 	end
-	
+
 	node.name = leaves
 	pos.y = pos.y+3
 	for dx=-2,2 do
@@ -96,7 +96,7 @@ function farming.generate_tree(pos, trunk, leaves, underground, replacements)
 				pos.x = pos.x+dx
 				pos.y = pos.y+dy
 				pos.z = pos.z+dz
-				
+
 				if dx == 0 and dz == 0 and dy==3 then
 					if minetest.get_node(pos).name == "air" and math.random(1, 5) <= 4 then
 						minetest.set_node(pos, node)
@@ -136,7 +136,7 @@ function farming.generate_tree(pos, trunk, leaves, underground, replacements)
 						end
 					end
 				end
-				
+
 				pos.x = pos.x-dx
 				pos.y = pos.y-dy
 				pos.z = pos.z-dz
@@ -149,6 +149,7 @@ farming.seeds = {
 	["farming:pumpkin_seed"]=60,
 	["farming_plus:strawberry_seed"]=30,
 	["farming_plus:rhubarb_seed"]=30,
+	["farming_plus:corn_seed"]=30,
 	["farming_plus:potatoe_seed"]=30,
 	["farming_plus:tomato_seed"]=30,
 	["farming_plus:orange_seed"]=30,
@@ -185,7 +186,7 @@ minetest.register_on_generated(function(minp, maxp, seed)
                                                 break
                                         end
                                 end
-                                
+
                                 if ground_y then
                                         local p = {x=x,y=ground_y+1,z=z}
                                         local nn = minetest.get_node(p).name
@@ -203,14 +204,14 @@ minetest.register_on_generated(function(minp, maxp, seed)
                                                 end
                                         end
                                 end
-                                
+
                         end
                 end
                 end
         end
 end)
 
-function farming.place_seed(itemstack, placer, pointed_thing, plantname)
+function farming:place_seed(itemstack, placer, pointed_thing, plantname)
 
 	-- Call on_rightclick if the pointed node defines it
 	if pointed_thing.type == "node" and placer and
@@ -254,12 +255,12 @@ function farming.place_seed(itemstack, placer, pointed_thing, plantname)
 	end
 
 	-- check if pointing at soil
-	if minetest.get_item_group(under.name, "soil") < 2 then
+	if minetest.get_item_group(under.name, "soil") <= 1 then
 		return
 	end
 
 	-- add the node and remove 1 item from the itemstack
-	minetest.add_node(pt.above, {name=plantname, param2 = 1})
+	minetest.add_node(pt.above, {name=plantname})
 	if not minetest.setting_getbool("creative_mode") then
 		itemstack:take_item()
 	end
@@ -280,10 +281,9 @@ for lvl = 1, 6, 1 do
 	})
 end
 
-
+--[[
 minetest.register_alias("farming:cotton", "farming:cotton_3")
 minetest.register_alias("farming:wheat_harvested", "farming:wheat")
-minetest.register_alias("farming:dough", "farming:flour")
 minetest.register_abm({
 	nodenames = {"farming:wheat"},
 	interval = 1,
@@ -292,6 +292,22 @@ minetest.register_abm({
 		minetest.set_node(pos, {name="farming:wheat_8"})
 	end,
 })
+]]--
+
+-- ========= BANANAS =========
+dofile(minetest.get_modpath("farming_plus").."/bananas.lua")
+
+-- ========= CARROTS =========
+dofile(minetest.get_modpath("farming_plus").."/carrots.lua")
+
+-- ========= COCOA =========
+dofile(minetest.get_modpath("farming_plus").."/cocoa.lua")
+
+-- ========= CORN =========
+dofile(minetest.get_modpath("farming_plus").."/corn.lua")
+
+-- ========= COTTON =========
+dofile(minetest.get_modpath("farming_plus").."/cotton.lua")
 
 -- ========= STRAWBERRIES =========
 dofile(minetest.get_modpath("farming_plus").."/strawberries.lua")
@@ -308,17 +324,14 @@ dofile(minetest.get_modpath("farming_plus").."/tomatoes.lua")
 -- ========= ORANGES =========
 dofile(minetest.get_modpath("farming_plus").."/oranges.lua")
 
--- ========= BANANAS =========
-dofile(minetest.get_modpath("farming_plus").."/bananas.lua")
-
--- ========= CARROTS =========
-dofile(minetest.get_modpath("farming_plus").."/carrots.lua")
-
--- ========= COCOA =========
-dofile(minetest.get_modpath("farming_plus").."/cocoa.lua")
-
 -- ========= PUMPKIN =========
 dofile(minetest.get_modpath("farming_plus").."/pumpkin.lua")
 
 -- ========= WEED =========
 dofile(minetest.get_modpath("farming_plus").."/weed.lua")
+
+-- ========= WHEAT =========
+dofile(minetest.get_modpath("farming_plus").."/wheat.lua")
+
+-- ========= CRAFT =========
+dofile(minetest.get_modpath("farming_plus").."/craft.lua")
