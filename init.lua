@@ -1,3 +1,5 @@
+local load_time_start = os.clock()
+
 farming.registered_plants = {}
 
 -- Boilerplate to support localized strings if intllib mod is installed.
@@ -321,3 +323,11 @@ dofile(minetest.get_modpath("farming_plus").."/wheat.lua")
 
 -- ========= CRAFT =========
 dofile(minetest.get_modpath("farming_plus").."/craft.lua")
+
+minetest.log(
+	'action',
+	string.format(
+		'['..minetest.get_current_modname()..'] loaded in %.3fs',
+		os.clock() - load_time_start
+	)
+)
