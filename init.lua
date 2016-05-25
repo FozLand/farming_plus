@@ -282,47 +282,21 @@ minetest.register_abm({
 })
 ]]--
 
--- ========= BANANAS =========
-dofile(minetest.get_modpath("farming_plus").."/bananas.lua")
-
--- ========= CARROTS =========
-dofile(minetest.get_modpath("farming_plus").."/carrots.lua")
-
--- ========= COCOA =========
-dofile(minetest.get_modpath("farming_plus").."/cocoa.lua")
-
--- ========= CORN =========
-dofile(minetest.get_modpath("farming_plus").."/corn.lua")
-
--- ========= COTTON =========
-dofile(minetest.get_modpath("farming_plus").."/cotton.lua")
-
--- ========= STRAWBERRIES =========
-dofile(minetest.get_modpath("farming_plus").."/strawberries.lua")
-
--- ========= RHUBARB =========
-dofile(minetest.get_modpath("farming_plus").."/rhubarb.lua")
-
--- ========= POTATOES =========
-dofile(minetest.get_modpath("farming_plus").."/potatoes.lua")
-
--- ========= TOMATOES =========
-dofile(minetest.get_modpath("farming_plus").."/tomatoes.lua")
-
--- ========= ORANGES =========
-dofile(minetest.get_modpath("farming_plus").."/oranges.lua")
-
--- ========= PUMPKIN =========
-dofile(minetest.get_modpath("farming_plus").."/pumpkin.lua")
-
--- ========= WEED =========
-dofile(minetest.get_modpath("farming_plus").."/weed.lua")
-
--- ========= WHEAT =========
-dofile(minetest.get_modpath("farming_plus").."/wheat.lua")
-
--- ========= CRAFT =========
-dofile(minetest.get_modpath("farming_plus").."/craft.lua")
+local modpath = minetest.get_modpath('farming_plus')
+dofile(modpath.."/bananas.lua")
+dofile(modpath.."/carrots.lua")
+dofile(modpath.."/cocoa.lua")
+dofile(modpath.."/corn.lua")
+dofile(modpath.."/cotton.lua")
+dofile(modpath.."/strawberries.lua")
+dofile(modpath.."/rhubarb.lua")
+dofile(modpath.."/potatoes.lua")
+dofile(modpath.."/tomatoes.lua")
+dofile(modpath.."/oranges.lua")
+dofile(modpath.."/pumpkin.lua")
+dofile(modpath.."/weed.lua")
+dofile(modpath.."/wheat.lua")
+dofile(modpath.."/craft.lua")
 
 minetest.log(
 	'action',
