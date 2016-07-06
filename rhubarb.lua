@@ -1,6 +1,9 @@
+-- main `S` code in init.lua
+local S = farming.S
+
 minetest.register_craftitem('farming_plus:rhubarb_seed', {
-	description = 'Rhubarb Seeds',
-	inventory_image = 'rhubarb_seed.png',
+	description = S('Rhubarb Seeds'),
+	inventory_image = "farming_rhubarb_seed.png",
 	groups = { not_in_creative_inventory=1 },
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, 'farming_plus:rhubarb_1')

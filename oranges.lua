@@ -1,8 +1,8 @@
--- original Farming_plus oranges.lua by PilzAdam modified by MTDad.
--- converted from plant to dwarf tree, solution inspired by DocFarming Corn, new textures by MTDad.
+-- main `S` code in init.lua
+local S = farming.S
 
 minetest.register_craftitem("farming_plus:orange_seed", {
-	description = "Orange Seeds",
+	description = S('Orange Seeds'),
 	inventory_image = "farming_orange_seed.png",
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, "farming_plus:orange_1")

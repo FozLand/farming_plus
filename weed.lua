@@ -1,6 +1,10 @@
-core.register_node(":farming:weed", {
-	description = 'Weed',
+-- main `S` code in init.lua
+local S = farming.S
+
+core.register_node(':farming:weed', {
+	description = S('Weed'),
 	paramtype = 'light',
+	sunlight_propagates = true,
 	walkable = false,
 	drawtype = "plantlike",
 	waving = 1,

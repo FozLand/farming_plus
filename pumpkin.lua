@@ -1,5 +1,8 @@
+-- main `S` code in init.lua
+local S = farming.S
+
 core.register_craftitem(':farming:pumpkin_seed', {
-	description = 'Pumpkin Seed',
+	description = S("Pumpkin Seed"),
 	inventory_image = 'farming_pumpkin_seed.png',
 	on_place = function(itemstack, placer, pointed_thing)
 		return farming.place_seed(itemstack, placer, pointed_thing, 'farming:pumpkin_1')
@@ -105,7 +108,7 @@ core.register_node(':farming:pumpkin', {
 	},
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=2, plant=1},
 	sounds = default.node_sound_wood_defaults(),
-	
+
 	on_punch = function(pos, node, puncher)
 		local tool = puncher:get_wielded_item():get_name()
 		if tool and string.match(tool, 'sword') then
@@ -190,12 +193,45 @@ core.register_node(':farming:pumpkin_face_light', {
 	end,
 })
 
+--recipes
+
 core.register_craft({
 	type = 'shapeless',
 	output = 'farming:pumpkin_face_light',
 	recipe = {'farming:pumpkin_face', 'default:torch'}
 })
 
+minetest.register_craft({
+	type = "shapeless",
+	output = "farming:pumpkin_seed 4",
+	recipe = {"farming:pumpkin"}
+})
+
+-- cutting_tools
+
+cutting_tools = {
+	"default:axe_bronze",
+	"default:axe_diamond",
+	"default:axe_mese",
+	"default:axe_steel",
+	"glooptest:axe_alatro",
+	"glooptest:axe_arol",
+	"moreores:axe_mithril",
+	"moreores:axe_silver",
+	"titanium:axe",
+	"building_blocks:knife",
+}
+for i,line in ipairs(cutting_tools) do 
+	local tools= cutting_tools[i]
+		minetest.register_craft({
+			type = "shapeless",
+			output = "farming:pumpkin_face",
+			recipe = {"farming:pumpkin",tools},
+			replacements = {
+				{ tools, tools },
+			}
+	})
+end
 -- ========= BIG PUMPKIN =========
 core.register_node(':farming:big_pumpkin', {
 	description = 'Big Pumpkin',
@@ -214,7 +250,7 @@ core.register_node(':farming:big_pumpkin', {
 			oddly_breakable_by_hand=1
 		},
 	sounds = default.node_sound_wood_defaults(),
-	
+
 	after_place_node = function(pos, placer)
 		for dx=-1,1 do
 			for dy=0,1 do
@@ -269,7 +305,7 @@ core.register_node(':farming:big_pumpkin', {
 		pos.y = pos.y+1
 		core.set_node(pos, {name='farming:big_pumpkin_top'})
 	end,
-	
+
 	after_destruct = function(pos, oldnode)
 		for dx=-1,1 do
 			for dy=0,1 do
@@ -310,6 +346,7 @@ core.register_node(':farming:big_pumpkin_side', {
 	},
 	groups = {not_in_creative_inventory=1},
 })
+
 core.register_node(':farming:big_pumpkin_corner', {
 	paramtype = 'light',
 	sunlight_propagates = true,
@@ -396,7 +433,7 @@ core.register_node(':farming:scarecrow', {
 		}
 	},
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=2},
-	
+
 	after_place_node = function(pos, placer)
 		local node = core.get_node(pos)
 		local param2 = node.param2
@@ -416,7 +453,7 @@ core.register_node(':farming:scarecrow', {
 		node.name = 'farming:scarecrow_bottom'
 		core.set_node(pos, node)
 	end,
-	
+
 	after_destruct = function(pos, oldnode)
 		pos.y = pos.y-1
 		if core.get_node(pos).name == 'farming:scarecrow_bottom' then
@@ -472,7 +509,7 @@ core.register_node(':farming:scarecrow_light', {
 		}
 	},
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=2},
-	
+
 	after_place_node = function(pos, placer)
 		local node = core.get_node(pos)
 		local param2 = node.param2
@@ -492,7 +529,7 @@ core.register_node(':farming:scarecrow_light', {
 		node.name = 'farming:scarecrow_bottom'
 		core.set_node(pos, node)
 	end,
-	
+
 	after_destruct = function(pos, oldnode)
 		pos.y = pos.y-1
 		if core.get_node(pos).name == 'farming:scarecrow_bottom' then
