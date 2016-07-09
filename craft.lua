@@ -79,7 +79,7 @@ minetest.register_craft({
 	--type = 'shapeless',
 	recipe = {
 		{'', 'default:stick', ''},
-		{'farming_plus:sugar', 'farming_plus:tomato_item 3', 'farming_plus:sugar'},
+		{'farming_plus:sugar', 'farming_plus:tomato_item', 'farming_plus:sugar'},
 		{'', 'vessels:glass_bottle', ''}
 	}
 })
