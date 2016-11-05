@@ -1,13 +1,13 @@
 local load_time_start = os.clock()
 
 if farming.add_plant
-or farming.registered_plants
+or farming.plant_index
 or farming.generate_tree
 or farming.seeds then
 	error("[farming_plus] some field(s) already exist")
 end
 
-farming.registered_plants = {}
+farming.plant_index = {}
 
 -- Boilerplate to support localized strings if intllib mod is installed.
 if (minetest.get_modpath("intllib")) then
@@ -51,7 +51,7 @@ function farming.add_plant(full_grown, names, interval, chance)
 		end
 	})
 
-	table.insert(farming.registered_plants, {
+	table.insert(farming.plant_index, {
 		full_grown = full_grown,
 		names = names,
 		interval = interval,
@@ -203,9 +203,9 @@ minetest.register_on_generated(function(minp, maxp, seed)
 						minetest.registered_nodes[nn].buildable_to then
 						nn = minetest.get_node({x=x,y=ground_y,z=z}).name
 						if nn == "default:dirt_with_grass" then
-							--local plant_choice = pr:next(1, #farming.registered_plants)
-							local plant_choice = math.floor(perlin1:get2d({x=x,y=z})*(#farming.registered_plants))
-							local plant = farming.registered_plants[plant_choice]
+							--local plant_choice = pr:next(1, #farming.plant_index)
+							local plant_choice = math.floor(perlin1:get2d({x=x,y=z})*(#farming.plant_index))
+							local plant = farming.plant_index[plant_choice]
 							if plant then
 								minetest.set_node(p, {name=plant.full_grown})
 							end
