@@ -207,7 +207,6 @@ core.register_node(':farming:big_pumpkin', {
 	groups = {
 			choppy=1,
 			flammable=2,
-			not_in_creative_inventory=1,
 			oddly_breakable_by_hand=1
 		},
 	sounds = default.node_sound_wood_defaults(),
