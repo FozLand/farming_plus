@@ -246,9 +246,9 @@ core.register_node(':farming:big_pumpkin', {
 			core.set_node(pos, {name='farming:big_pumpkin_corner', param2=2})
 			pos.x = pos.x+1
 			pos.z = pos.z-2
-			core.set_node(pos, {name='farming:big_pumpkin_side', param2=4})
+			core.set_node(pos, {name='farming:big_pumpkin_side', param2=0})
 			pos.x = pos.x+1
-			core.set_node(pos, {name='farming:big_pumpkin_corner', param2=4})
+			core.set_node(pos, {name='farming:big_pumpkin_corner', param2=0})
 			pos.z = pos.z+1
 			core.set_node(pos, {name='farming:big_pumpkin_side', param2=3})
 			pos.z = pos.z+1
