@@ -112,7 +112,6 @@ core.register_node(':farming:pumpkin', {
 	on_punch = function(pos, node, puncher)
 		local tool = puncher:get_wielded_item():get_name()
 		if minetest.is_protected(pos, puncher:get_player_name()) or minetest.is_protected({x=pos.x, y=pos.y+1, z=pos.z}, puncher:get_player_name()) then
-				minetest.chat_send_player(puncher, 'No Cutting for you!!')
 				return False
 		else
 			if tool and string.match(tool, 'sword') then
