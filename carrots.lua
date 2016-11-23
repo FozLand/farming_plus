@@ -15,7 +15,7 @@ minetest.register_node("farming_plus:carrot_1", {
 	walkable = false,
 	drawtype = "plantlike",
 	waving = 1,
-	drop = "",
+	drop = "farming_plus:carrot_seed",
 	tiles = {"farming_carrot_1.png"},
 	selection_box = {
 		type = "fixed",
@@ -32,7 +32,7 @@ minetest.register_node("farming_plus:carrot_2", {
 	walkable = false,
 	drawtype = "plantlike",
 	waving = 1,
-	drop = "",
+	drop = "farming_plus:carrot_seed",
 	tiles = {"farming_carrot_2.png"},
 	selection_box = {
 		type = "fixed",
@@ -49,7 +49,7 @@ minetest.register_node("farming_plus:carrot_3", {
 	walkable = false,
 	drawtype = "plantlike",
 	waving = 1,
-	drop = "",
+	drop = "farming_plus:carrot_seed",
 	tiles = {"farming_carrot_3.png"},
 	selection_box = {
 		type = "fixed",
