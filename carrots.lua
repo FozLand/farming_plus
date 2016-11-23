@@ -27,7 +27,7 @@ minetest.register_node("farming_plus:carrot_1", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("farming_plus:carrot_2", {
+minetest.register_node("", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
@@ -49,7 +49,7 @@ minetest.register_node("farming_plus:carrot_3", {
 	walkable = false,
 	drawtype = "plantlike",
 	waving = 1,
-	drop = "farming_plus:carrot_seed",
+	drop = "",
 	tiles = {"farming_carrot_3.png"},
 	selection_box = {
 		type = "fixed",
