@@ -27,7 +27,7 @@ minetest.register_node("farming_plus:carrot_1", {
 	sounds = default.node_sound_leaves_defaults(),
 })
 
-minetest.register_node("", {
+minetest.register_node("farming_plus:carrot_2", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
