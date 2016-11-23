@@ -12,7 +12,7 @@ minetest.register_node('farming_plus:corn_1', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:corn_seed',
 	tiles = {'corn1.png'},
 	selection_box = {
 		type = 'fixed',
@@ -29,7 +29,7 @@ minetest.register_node('farming_plus:corn_2', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:corn_seed',
 	tiles = {'corn2.png'},
 	selection_box = {
 		type = 'fixed',
@@ -46,7 +46,7 @@ minetest.register_node('farming_plus:corn_3', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:corn_seed',
 	tiles = {'corn3.png'},
 	selection_box = {
 		type = 'fixed',
@@ -63,7 +63,7 @@ minetest.register_node('farming_plus:corn_4', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:corn_seed',
 	tiles = {'corn4.png'},
 	selection_box = {
 		type = 'fixed',
@@ -80,7 +80,7 @@ minetest.register_node('farming_plus:corn_5', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:corn_seed',
 	tiles = {'corn22.png'},
 	selection_box = {
 		type = 'fixed',
@@ -97,7 +97,7 @@ minetest.register_node('farming_plus:corn_6', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:corn_seed',
 	tiles = {'corn23.png'},
 	selection_box = {
 		type = 'fixed',
