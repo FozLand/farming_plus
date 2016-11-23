@@ -49,7 +49,7 @@ core.register_node(':farming:pumpkin_2', {
 	paramtype = 'light',
 	sunlight_propagates = true,
 	drawtype = 'nodebox',
-	drop = 'farming:pumpkin_seed',
+	drop = '',
 	tiles = {
 		"farming_pumpkin_top.png",
 		"farming_pumpkin_bottom.png",
