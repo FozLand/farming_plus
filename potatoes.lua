@@ -32,7 +32,7 @@ minetest.register_node('farming_plus:potato_2', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = 'farming_plus:potato_seed',
+	drop = '',
 	tiles = {'farming_potato_2.png'},
 	selection_box = {
 		type = 'fixed',
