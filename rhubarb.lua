@@ -32,7 +32,7 @@ minetest.register_node('farming_plus:rhubarb_2', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = 'farming_plus:rhubarb_seed',
+	drop = '',
 	tiles = {'farming_rhubarb_2.png'},
 	selection_box = {
 		type = 'fixed',
