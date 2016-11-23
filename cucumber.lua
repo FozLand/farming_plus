@@ -30,7 +30,7 @@ minetest.register_node("farming_plus:cucumber_2", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
-	drop = "farming_plus:cucumber_seed",
+	drop = "",
 	tiles = {"cucumber2.png"},
 	selection_box = {
 		type = "fixed",
@@ -46,7 +46,7 @@ minetest.register_node("farming_plus:cucumber_3", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
-	drop = "farming_plus:cucumber_seed",
+	drop = "",
 	tiles = {"cucumber2.png"},
 	selection_box = {
 		type = "fixed",
