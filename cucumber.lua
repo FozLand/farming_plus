@@ -14,7 +14,7 @@ minetest.register_node("farming_plus:cucumber_1", {
 	paramtype = "light",
 	walkable = false,
 	drawtype = "plantlike",
-	drop = "",
+	drop = "farming_plus:cucumber_seed",
 	tiles = {"cucumber1.png"},
 	selection_box = {
 		type = "fixed",

@@ -15,7 +15,7 @@ minetest.register_node('farming_plus:tomato_1', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:tomato_seed',
 	tiles = {'farming_tomato_1.png'},
 	selection_box = {
 		type = 'fixed',

@@ -12,7 +12,7 @@ minetest.register_node('farming_plus:corn_1', {
 	walkable = false,
 	drawtype = 'plantlike',
 	waving = 1,
-	drop = '',
+	drop = 'farming_plus:corn_seed',
 	tiles = {'corn1.png'},
 	selection_box = {
 		type = 'fixed',
