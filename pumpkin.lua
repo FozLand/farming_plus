@@ -111,11 +111,13 @@ core.register_node(':farming:pumpkin', {
 
 	on_punch = function(pos, node, puncher)
 		local tool = puncher:get_wielded_item():get_name()
-		if tool and string.match(tool, 'sword') then
+		if tool and string.match(tool, 'sword') and
+		   not minetest.is_protected(pos, puncher:get_player_name()) then
 			node.name = 'farming:pumpkin_face'
 			core.set_node(pos, node)
 		end
 	end
+	
 })
 
 farming.add_plant('farming:pumpkin', {'farming:pumpkin_1', 'farming:pumpkin_2'}, 80, 20)
