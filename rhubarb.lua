@@ -68,6 +68,7 @@ minetest.register_node('farming_plus:rhubarb', {
 minetest.register_craftitem('farming_plus:rhubarb_item', {
 	description = 'Rhubarb',
 	inventory_image = 'rhubarb.png',
+	on_use = minetest.item_eat(-4),
 })
 
 farming.add_plant('farming_plus:rhubarb', {'farming_plus:rhubarb_1', 'farming_plus:rhubarb_2'}, 50, 20)
