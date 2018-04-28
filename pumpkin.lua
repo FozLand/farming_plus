@@ -187,6 +187,7 @@ core.register_node(':farming:pumpkin_face_light', {
 	},
 	groups = {choppy=2, oddly_breakable_by_hand=2, flammable=2},
 	sounds = default.node_sound_wood_defaults(),
+	drop = "farming:pumpkin_face",
 	on_punch = function(pos, node, puncher)
 		node.name = "farming:pumpkin_face"
 		core.set_node( pos, node )
