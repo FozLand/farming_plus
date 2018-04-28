@@ -154,7 +154,6 @@ core.register_node(':farming:pumpkin_face', {
 	on_punch = function(pos, node, puncher)
 		node.name = "farming:pumpkin_face_light"
 		core.set_node( pos, node )
-		nodeupdate( pos )
 	end,
 })
 
@@ -191,7 +190,6 @@ core.register_node(':farming:pumpkin_face_light', {
 	on_punch = function(pos, node, puncher)
 		node.name = "farming:pumpkin_face"
 		core.set_node( pos, node )
-		nodeupdate( pos )
 	end,
 })
 
